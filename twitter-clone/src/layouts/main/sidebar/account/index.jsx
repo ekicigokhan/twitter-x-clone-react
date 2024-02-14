@@ -8,7 +8,7 @@ export default function Account() {
   return (
     <div className="mt-auto">
       <Popover className={"relative"}>
-        <Popover.Button className="my-3 p-3 items-center rounded-full hover:bg-[#eff3f41a] w-full flex outline-none text-left">
+        <Popover.Button className="my-3 p-3 items-center transition-colors rounded-full hover:bg-[#eff3f41a] w-full flex outline-none text-left">
           <img src={account.avatar} className="w-10 h-10 rounded-full" alt="" />
           <div className="mx-3 text-[15px]">
             <h6 className="font-bold">{account.username}</h6>
@@ -29,7 +29,7 @@ export default function Account() {
           leaveFrom="transform scale-100 opacity-100"
           leaveTo="transform scale-95 opacity-0"
         >
-          <Popover.Panel className="py-3 bottom-[88px] absolute bottom-full w-[300px] overflow-hidden left-1/2 -translate-x-1/2 bg-black shadow-box rounded-2xl">
+          <Popover.Panel className="py-3 bottom-[100px] absolute bottom-full w-[300px] overflow-hidden left-1/2 -translate-x-1/2 bg-black shadow-box rounded-2xl">
             {({ close }) => <ChangeAccount close={close} />}
           </Popover.Panel>
         </Transition>

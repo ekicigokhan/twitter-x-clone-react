@@ -20,7 +20,7 @@ export default function Menu() {
           {({ isActive }) => (
             <div
               className={classNames(
-                "p-2 rounded-full transition-colors inline-flex items-center gap-5 group-hover:bg-[#eff3f41a]",
+                "pr-2 pt-2 pb-2 pl-3 rounded-full transition-colors inline-flex items-center gap-5 group-hover:bg-[#eff3f41a]",
                 {
                   "font-bold": isActive,
                 }
