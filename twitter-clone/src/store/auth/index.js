@@ -28,7 +28,7 @@ const initialState = {
       username: "Kerem Aktürkoğlu",
       fullname: "keremakturkoglu",
       avatar:
-        "https://pbs.twimg.com/profile_images/1650808544956956673/pEk2LEfU_400x400.jpg",
+        "https://pbs.twimg.com/profile_images/1742852027531554817/7N9gi7EO_400x400.jpg",
     },
   ],
 };
