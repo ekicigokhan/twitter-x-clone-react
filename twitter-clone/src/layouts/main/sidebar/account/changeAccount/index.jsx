@@ -18,13 +18,18 @@ export default function ChangeAccount({ close }) {
           }}
           className={classNames(
             "py-3 px-4 flex items-center text-left w-full transition-colors ",
-            { "hover:bg-[#eff3f41a]": currentAccount.id !== account.id }
+            {
+              "hover:bg-[color:var(--background-secondary)]":
+                currentAccount.id !== account.id,
+            }
           )}
         >
           <img src={account.avatar} className="w-10 h-10 rounded-full" alt="" />
           <div className="mx-3 flex-1 text-[15px]">
             <h6 className="font-bold">{account.username}</h6>
-            <div className="text-[#71767b]">@{account.fullname}</div>
+            <div className="text-[color:var(--color-base-secondary)]">
+              @{account.fullname}
+            </div>
           </div>
           {currentAccount.id === account.id && (
             <svg
@@ -38,13 +43,13 @@ export default function ChangeAccount({ close }) {
         </button>
       ))}
       <div className="h-px bg-[#2f3336] my-3" />
-      <button className="py-3 px-4 text-left transition-colors hover:bg-[#eff3f41a] w-full text[15px] text-[#e7e9ea] font-bold">
+      <button className="py-3 px-4 text-left transition-colors hover:bg-[color:var(--background-secondary)] w-full text[15px] font-bold">
         Var olan bir hesap ekle
       </button>
-      <button className="py-3 px-4 text-left transition-colors hover:bg-[#eff3f41a] w-full text[15px] text-[#e7e9ea] font-bold">
+      <button className="py-3 px-4 text-left transition-colors hover:bg-[color:var(--background-secondary)] w-full text[15px] font-bold">
         Hesapları yönet
       </button>
-      <button className="py-3 px-4 text-left transition-colors hover:bg-[#eff3f41a] w-full text[15px] text-[#e7e9ea] font-bold">
+      <button className="py-3 px-4 text-left transition-colors hover:bg-[color:var(--background-secondary)] w-full text[15px] font-bold">
         @{currentAccount.fullname} hesabından çıkış yap
       </button>
     </div>
