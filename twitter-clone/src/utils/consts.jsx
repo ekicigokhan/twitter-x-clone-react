@@ -289,3 +289,32 @@ export const topics = [
     postCount: 13663,
   },
 ];
+
+export const colors = [
+  {
+    primary: "#1d9bf0",
+    secondary: "#8ecdf8",
+  }, //MAVİ
+  {
+    primary: "#ffd400",
+    secondary: "#ffea80",
+  }, //SARI
+  {
+    primary: "#f91880",
+    secondary: "#fc8cc0",
+  }, //PEMBE
+  {
+    primary: "#7856ff",
+    secondary: "#bcabff",
+  }, //MOR
+  {
+    primary: "#ff7a00",
+    secondary: "#ffbd80",
+  }, //TURUNCU
+  {
+    primary: "#00ba7c",
+    secondary: "#80ddbe",
+  }, //YEŞİL
+];
+
+export const fontSizes = [14, 15, 16, 18, 19];

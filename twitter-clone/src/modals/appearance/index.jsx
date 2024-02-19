@@ -1,23 +1,37 @@
 import classNames from "classnames";
+import { useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Button from "~/components/button";
 import {
   setBackgroundColor,
   setBoxShadow,
   setColor,
+  setFontSize,
 } from "~/store/appearance/actions";
 import { useAppearance } from "~/store/appearance/hooks";
+import { colors, fontSizes } from "~/utils/consts";
 
 export default function AppearanceModal({ close }) {
-  const { backgroundColor, color, boxShadow } = useAppearance();
+  const { backgroundColor, color, fontSize } = useAppearance();
+
+  const [fontSizePercent, setFontSizePercent] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setFontSizePercent(
+        document.querySelector(".active-font-size").offsetLeft + 3
+      );
+    }, 1);
+  }, [fontSize]);
 
   return (
     <div className="w-[600px]">
-      <h3 className="mt-8 mb-3 text-[23px] leading-7 font-extrabold text-center">
+      <h3 className="mt-8 mb-3 text-[1.438rem] leading-7 font-extrabold text-center">
         Görünümünü Özelleştir
       </h3>
       <div className="p-8 pt-0">
-        <p className="text-center text-[color:var(--color-base-secondary)] text-[15px] leading-5 mb-5">
+        <p className="text-center text-[color:var(--color-base-secondary)] leading-5 text-[0.938rem] mb-5">
           Bu ayarlar, bu tarayıcıdaki tüm X hesaplarını etkiler.
         </p>
         <div className="mx-8 mb-4">
@@ -28,7 +42,7 @@ export default function AppearanceModal({ close }) {
               className="w-10 h-10 rounded-full object-cover gap-3"
             />
             <div className="flex-1 flex flex-col">
-              <header className="mb-0.5 leading-5 text-[15px] flex">
+              <header className="mb-0.5 leading-5 flex">
                 <div className="font-bold flex items-center">
                   X
                   <svg
@@ -47,7 +61,7 @@ export default function AppearanceModal({ close }) {
                   </div>
                 </div>
               </header>
-              <div className="text-[color:var(--color-base)] text-[15px] leading-5">
+              <div className="text-[color:var(--color-base)] leading-5">
                 X'in merkezinde, tıpkı bunun gibi gönderi denen kısa mesajlar
                 yatar. Gönderiler; fotoğraflar, videolar, bağlantılar, metinler,
                 etiketler ve
@@ -63,91 +77,230 @@ export default function AppearanceModal({ close }) {
           </div>
         </div>
         <div className="mx-8 mb-4">
-          <h6 className="text-[color:var(--color-base-secondary)] mb-1 leading-5 text-[13px] font-bold">
-            Arka plan
-          </h6>
-          <div className="py-1 px-3 mb-3 gap-1 grid grid-cols-3 bg-[color:var(--background-secondary)] rounded-2xl">
-            <button
-              onClick={() => {
-                setColor({
-                  ...color,
-                  base: "#0f1419",
-                  baseSecondary: "#8b98a5",
-                });
-                setBackgroundColor({
-                  name: "light",
-                  primary: "#fff",
-                  secondary: "#f7f9f9",
-                  third: "#eff3f4",
-                  modal: "#00000066",
-                });
-                setBoxShadow(
-                  "rgba(101, 119, 134, 0.2) 0px 0px 15px, rgba(101, 119, 134, 0.15) 0px 0px 3px 1px"
-                );
-              }}
-              className={classNames(
-                "h-16 px-5 text-[#0f1419] font-bold bg-white rounded border border-white/5",
-                {
-                  "!border-[color:var(--color-primary)]":
-                    backgroundColor.name === "light",
-                }
-              )}
-            >
-              Varsayılan
-            </button>
-            <button
-              onClick={() => {
-                setColor({
-                  ...color,
-                  base: "#f7f9f9",
-                  baseSecondary: "#8b98a5",
-                });
-                setBackgroundColor({
-                  name: "dim-light",
-                  primary: "#15202b",
-                  secondary: "#1e2732",
-                  third: "#263340",
-                  modal: "#00000066",
-                });
-              }}
-              className={classNames(
-                "h-16 px-5 text-[#f7f9f9] font-bold bg-[#15202b] rounded border border-white/10",
-                {
-                  "!border-[color:var(--color-primary)]":
-                    backgroundColor.name === "dim-light",
-                }
-              )}
-            >
-              Loş
-            </button>
-            <button
-              onClick={() => {
-                setColor({
-                  ...color,
-                  base: "#e7e9ea",
-                  baseSecondary: "#71767b",
-                });
-                setBackgroundColor({
-                  name: "dark",
-                  primary: "#000",
-                  secondary: "#16181c",
-                  third: "#202327",
-                  modal: "#00000066",
-                });
-              }}
-              className={classNames(
-                "h-16 px-5 text-[#f7f9f9] font-bold bg-black rounded border border-white/5",
-                {
-                  "!border-[color:var(--color-primary)]":
-                    backgroundColor.name === "dark",
-                }
-              )}
-            >
-              Işıklar kapalı
-            </button>
-          </div>
+          <section>
+            <h6 className="text-[color:var(--color-base-secondary)] mb-1 leading-5 text-[13px] font-bold">
+              Yazı tipi boyutu
+            </h6>
+            <div className="bg-[color:var(--background-secondary)] p-4 rounded-2xl flex items-center gap-5 ">
+              <div className="text-[0.813rem]">Aa</div>
+              <div className="h-1 bg-[color:var(--color-secondary)] flex-1 rounded-full relative">
+                <div
+                  style={{ width: fontSizePercent }}
+                  className="bg-[color:var(--color-primary)] rounded-full absolute top-0 h-1 left-0"
+                />
+                <div className="flex justify-between absolute -top-3.5 w-[calc(100%+16px)] -left-2">
+                  {fontSizes.map((fs, index) => (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setFontSize(fs);
+                      }}
+                      key={index}
+                      className={classNames(
+                        "before:absolute before:inset-0 before:rounded-full before:hover:bg-[color:var(--color-primary)] before:opacity-10 w-8 h-8 rounded-full relative flex items-center justify-center",
+                        {
+                          "active-font-size": fs === fontSize,
+                        }
+                      )}
+                    >
+                      <div
+                        className={classNames(
+                          "h-3 w-3 bg-[color:var(--color-secondary)] rounded-full",
+                          {
+                            "h-4 w-4": fs === fontSize,
+                            "!bg-[color:var(--color-primary)]": fs <= fontSize,
+                          }
+                        )}
+                      ></div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className="text-[1.25rem]">Aa</div>
+            </div>
+          </section>
+          <section>
+            <h6 className="text-[color:var(--color-base-secondary)] mb-1 leading-5 text-[13px] font-bold">
+              Renk
+            </h6>
+            <div className="bg-[color:var(--background-secondary)] py-2 mb-3 rounded-2xl flex justify-around items-center">
+              {colors.map((c, index) => (
+                <button
+                  onClick={() => {
+                    setColor({
+                      ...color,
+                      ...c,
+                    });
+                  }}
+                  key={index}
+                  style={{ "--bg": c.primary }}
+                  className="w-[40px] h-[40px] rounded-full bg-[color:var(--bg)] flex items-center justify-center"
+                >
+                  {color.primary === c.primary && (
+                    <svg viewBox="0 0 24 24" width={25} height={25}>
+                      <path
+                        fill="currentColor"
+                        d="M9.64 18.952l-5.55-4.861 1.317-1.504 3.951 3.459 8.459-10.948L19.4 6.32 9.64 18.952z"
+                      />
+                    </svg>
+                  )}
+                </button>
+              ))}
+            </div>
+          </section>
+          <section>
+            <h6 className="text-[color:var(--color-base-secondary)] mb-1 leading-5 text-[13px] font-bold">
+              Arka plan
+            </h6>
+            <div className="py-2 px-4 mb-3 gap-2 grid grid-cols-3 bg-[color:var(--background-secondary)] rounded-2xl">
+              <button
+                onClick={() => {
+                  setColor({
+                    ...color,
+                    base: "#0f1419",
+                    baseSecondary: "#8b98a5",
+                  });
+                  setBackgroundColor({
+                    name: "light",
+                    primary: "#fff",
+                    secondary: "#f7f9f9",
+                    third: "#eff3f4",
+                    modal: "#00000066",
+                  });
+                  setBoxShadow(
+                    "rgba(101, 119, 134, 0.2) 0px 0px 15px, rgba(101, 119, 134, 0.15) 0px 0px 3px 1px"
+                  );
+                }}
+                className={classNames(
+                  "h-[62px] pr-3 pl-2 text-[#0f1419] font-bold bg-white rounded border border-white/10 group gap-1.5 flex items-center",
+                  {
+                    "!border-[color:var(--color-primary)] !border-2":
+                      backgroundColor.name === "light",
+                  }
+                )}
+              >
+                <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-black/10">
+                  <div
+                    className={classNames(
+                      "w-[20px] h-[20px] rounded-full border-[2px] border-[#3e4144] flex items-center justify-center",
+                      {
+                        "bg-[color:var(--color-primary)]":
+                          backgroundColor.name === "light",
+                      }
+                    )}
+                  >
+                    {backgroundColor.name === "light" && (
+                      <svg viewBox="0 0 24 24" width={16} height={16}>
+                        <path
+                          fill="#fff"
+                          d="M9.64 18.952l-5.55-4.861 1.317-1.504 3.951 3.459 8.459-10.948L19.4 6.32 9.64 18.952z"
+                        />
+                      </svg>
+                    )}
+                  </div>
+                </div>
+                <div className="truncate">Varsayılan</div>
+              </button>
+              <button
+                onClick={() => {
+                  setColor({
+                    ...color,
+                    base: "#f7f9f9",
+                    baseSecondary: "#8b98a5",
+                  });
+                  setBackgroundColor({
+                    name: "dim-light",
+                    primary: "#15202b",
+                    secondary: "#1e2732",
+                    third: "#263340",
+                    modal: "#00000066",
+                  });
+                  setBoxShadow(
+                    "rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px"
+                  );
+                }}
+                className={classNames(
+                  "h-[62px] pr-3 pl-2 text-[#f7f9f9] font-bold bg-[#15202b] rounded border border-white/10 group gap-1.5 flex items-center",
+                  {
+                    "!border-[color:var(--color-primary)] !border-2":
+                      backgroundColor.name === "dim-light",
+                  }
+                )}
+              >
+                <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-white/10">
+                  <div
+                    className={classNames(
+                      "w-[20px] h-[20px] rounded-full border-[2px] border-[#5c6e7e] flex items-center justify-center",
+                      {
+                        "bg-[color:var(--color-primary)]":
+                          backgroundColor.name === "dim-light",
+                      }
+                    )}
+                  >
+                    {backgroundColor.name === "dim-light" && (
+                      <svg viewBox="0 0 24 24" width={16} height={16}>
+                        <path
+                          fill="currentColor"
+                          d="M9.64 18.952l-5.55-4.861 1.317-1.504 3.951 3.459 8.459-10.948L19.4 6.32 9.64 18.952z"
+                        />
+                      </svg>
+                    )}
+                  </div>
+                </div>
+                <div className="truncate flex-1 pr-6">Loş</div>
+              </button>
+              <button
+                onClick={() => {
+                  setColor({
+                    ...color,
+                    base: "#e7e9ea",
+                    baseSecondary: "#71767b",
+                  });
+                  setBackgroundColor({
+                    name: "dark",
+                    primary: "#000",
+                    secondary: "#16181c",
+                    third: "#202327",
+                    modal: "#00000066",
+                  });
+                  setBoxShadow(
+                    "rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px"
+                  );
+                }}
+                className={classNames(
+                  "h-[62px] pr-3 pl-2 text-[#f7f9f9] font-bold bg-black rounded border border-white/10 group gap-1.5 flex items-center",
+                  {
+                    "!border-[color:var(--color-primary)] !border-2":
+                      backgroundColor.name === "dark",
+                  }
+                )}
+              >
+                <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-white/10">
+                  <div
+                    className={classNames(
+                      "w-[20px] h-[20px] rounded-full border-[2px] border-[#3e4144] flex items-center justify-center",
+                      {
+                        "bg-[color:var(--color-primary)]":
+                          backgroundColor.name === "dark",
+                      }
+                    )}
+                  >
+                    {backgroundColor.name === "dark" && (
+                      <svg viewBox="0 0 24 24" width={16} height={16}>
+                        <path
+                          fill="currentColor"
+                          d="M9.64 18.952l-5.55-4.861 1.317-1.504 3.951 3.459 8.459-10.948L19.4 6.32 9.64 18.952z"
+                        />
+                      </svg>
+                    )}
+                  </div>
+                </div>
+                <div className="truncate">Işıklar kapalı</div>
+              </button>
+            </div>
+          </section>
         </div>
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center pt-4">
           <Button onClick={close}>Bitti</Button>
         </div>
       </div>

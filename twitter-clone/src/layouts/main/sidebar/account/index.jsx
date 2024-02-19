@@ -8,7 +8,7 @@ export default function Account() {
   return (
     <div className="mt-auto">
       <Popover className={"relative"}>
-        <Popover.Button className="my-3 p-3 items-center transition-colors rounded-full hover:bg-[color:var(--background-secondary)] w-full flex outline-none text-left">
+        <Popover.Button className="my-3 p-3 items-center transition-colors rounded-full hover:bg-[color:var(--background-third)] w-full flex outline-none text-left">
           <img src={account.avatar} className="w-10 h-10 rounded-full" alt="" />
           <div className="mx-3 text-[15px]">
             <h6 className="font-bold">{account.username}</h6>

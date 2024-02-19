@@ -20,7 +20,7 @@ export default function Menu() {
           {({ isActive }) => (
             <div
               className={classNames(
-                "pr-2 pt-2 pb-2 pl-3 rounded-full transition-colors inline-flex items-center gap-5 group-hover:bg-[color:var(--background-secondary)]",
+                "pr-2 pt-2 pb-2 pl-3 rounded-full transition-colors inline-flex items-center gap-5 group-hover:bg-[color:var(--background-third)]",
                 {
                   "font-bold": isActive,
                 }
@@ -28,7 +28,7 @@ export default function Menu() {
             >
               <div className="w-[1.641rem] h-[1.641rem] relative">
                 {menu.notification && (
-                  <span className="w-[1.125rem] h-[1.125rem] rounded-full text-[color:var(--background-primary)] border border-[color:var(--background-primary)] bg-[color:var(--color-primary)] absolute -top-1.5 -right-1.5 flex items-center justify-center text-[11px]">
+                  <span className="w-[1.125rem] h-[1.125rem] rounded-full text-white border border-[color:var(--background-primary)] bg-[color:var(--color-primary)] absolute -top-1.5 -right-1  flex items-center justify-center text-[11px]">
                     {menu?.notification}
                   </span>
                 )}
