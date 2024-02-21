@@ -6,6 +6,7 @@ const initialState = {
   backgroundColor: {
     name: "dark",
     primary: "#000",
+    primaryAlpha: "#000000a6",
     secondary: "#16181c",
     third: "#202327",
     modal: "#00000066",
