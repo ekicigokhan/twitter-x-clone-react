@@ -17,7 +17,7 @@ export default function MainLayout() {
     );
     document.documentElement.style.setProperty(
       "--background-primary-alpha",
-      appearance.backgroundColor.primaryAlpha
+      appearance.backgroundColor.primary + "a6"
     );
     document.documentElement.style.setProperty(
       "--background-secondary",
@@ -35,6 +35,10 @@ export default function MainLayout() {
     document.documentElement.style.setProperty(
       "--color-primary",
       appearance.color.primary
+    );
+    document.documentElement.style.setProperty(
+      "--color-primary-alpha",
+      appearance.color.primary + "12"
     );
     document.documentElement.style.setProperty(
       "--color-secondary",

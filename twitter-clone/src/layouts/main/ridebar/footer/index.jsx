@@ -26,7 +26,7 @@ export default function Footer() {
         Gizlilik Politikası
       </Link>
       <Link
-        className="hover:underline text-[color:var(--color-base-)] leading-4"
+        className="hover:underline text-[color:var(--color-base-secondary)] leading-4"
         to={"/"}
       >
         Çerez Politikası
@@ -96,6 +96,10 @@ export default function Footer() {
         <p className="text-[13] text-[color:var(--color-base-secondary)] leading-4">
           &copy; 2023 GÖKHAN EKİCİ
         </p>
+      </div>
+      <div className="text-2xl bg-[color:var(--color-primary)] p-3 border rounded-2xl text-[color:var(--color-base)]">
+        Gökhan Ekici tarafından tamamen pratik amaçlı olarak tasarlanmıştır.
+        <p className="text-red-950 font-bold">Responsive değildir.</p>
       </div>
     </footer>
   );

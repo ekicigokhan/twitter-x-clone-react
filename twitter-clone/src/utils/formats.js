@@ -4,7 +4,7 @@ export const numberFormat = (value) => {
     config = {
       notation: "compact",
       maximumFractionDigits: 1,
-      compactDisplay: "long",
+      compactDisplay: "short",
     };
   }
   return Intl.NumberFormat("tr", config).format(value);
