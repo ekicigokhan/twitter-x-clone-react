@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="mb-4 px-4 flex flex-wrap gap-2 text-[13px]">
+    <footer className="mb-4 px-4 flex flex-wrap gap-2 text-[0.813rem]">
       <Link
         className="hover:underline text-[color:var(--color-base-secondary)] leading-4"
         to={"/"}
@@ -49,9 +49,9 @@ export default function Footer() {
       >
         Reklam bilgisi
       </Link>
-      <div className="w-full flex gap-2">
+      <div className="inline-flex gap-2 flex-wrap">
         <Popover className="relative inline-flex leading-4">
-          <Popover.Button className="hover:underline text-[color:var(--color-base-secondary)] leading-4 inline-flex items-center">
+          <Popover.Button className="hover:underline text-[color:var(--color-base-secondary)] outline-none leading-4 inline-flex items-center">
             Daha fazla
             <svg viewBox="0 0 24 24" className="h-[1em] px-0.5">
               <path
@@ -60,34 +60,34 @@ export default function Footer() {
               />
             </svg>
           </Popover.Button>
-          <Popover.Panel className="w-[150px] transition-colors overflow-hidden absolute bottom-0 right-0 max-w-[384px] bg-[color:var(--background-primary)] shadow-box rounded-xl grid">
+          <Popover.Panel className="w-[9.375rem] transition-colors overflow-hidden absolute bottom-0 right-0 max-w-[24rem] bg-[color:var(--background-primary)] shadow-box rounded-xl grid">
             <Link
               to={"/"}
-              className="py-3 px-4 text-[13px] leading-5 font-bold hover:bg-[color:var(--background-secondary)]"
+              className="py-3 px-4 leading-5 font-bold hover:bg-[color:var(--background-secondary)]"
             >
               Hakkında
             </Link>
             <Link
               to={"/"}
-              className="py-3 px-4 text-[13px] leading-5 font-bold hover:bg-[color:var(--background-secondary)]"
+              className="py-3 px-4 leading-5 font-bold hover:bg-[color:var(--background-secondary)]"
             >
               X uygulamasını indir
             </Link>
             <Link
               to={"/"}
-              className="py-3 px-4 text-[13px] leading-5 font-bold hover:bg-[color:var(--background-secondary)]"
+              className="py-3 px-4 leading-5 font-bold hover:bg-[color:var(--background-secondary)]"
             >
               Durum
             </Link>
             <Link
               to={"/"}
-              className="py-3 px-4 text-[13px] leading-5 font-bold hover:bg-[color:var(--background-secondary)]"
+              className="py-3 px-4 leading-5 font-bold hover:bg-[color:var(--background-secondary)]"
             >
               İşletmeciler için X
             </Link>
             <Link
               to={"/"}
-              className="py-3 px-4 text-[13px] leading-5 font-bold hover:bg-[color:var(--background-secondary)]"
+              className="py-3 px-4 leading-5 font-bold hover:bg-[color:var(--background-secondary)]"
             >
               Geliştiriciler
             </Link>

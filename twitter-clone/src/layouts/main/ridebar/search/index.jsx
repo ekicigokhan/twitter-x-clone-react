@@ -12,14 +12,13 @@ export default function Search() {
   return (
     <div
       ref={ref}
-      className="min-h-[32px] h-[53px] mb-3 flex items-center sticky top-0 bg-[color:var(--background-primary)] z-10"
+      className="min-h-[2rem] h-[3.313rem] mb-3 flex items-center sticky top-0 bg-[color:var(--background-primary)] z-10"
     >
-      <label className="h-[43px] rounded-full relative bg-[color:var(--background-third)] w-full group border border-transparent focus-within:border-[color:var(--color-primary)] focus-within:bg-[color:var(--background-primary)]">
-        <div className="w-[56px] h-full flex items-center justify-center absolute top-0 left-0 pointer-events-none">
+      <label className="h-[2.688rem] rounded-full relative bg-[color:var(--background-third)] w-full group border border-transparent focus-within:border-[color:var(--color-primary)] focus-within:bg-[color:var(--background-primary)]">
+        <div className="w-[3.5rem] h-full flex items-center justify-center absolute top-0 left-0 pointer-events-none">
           <svg
             viewBox="0 0 24 24"
-            height={18.75}
-            className="min-w-[32px] text-[color:var(--color-base-secondary)] group-focus-within:text-[color:var(--color-primary)] "
+            className="h-[1.172rem] min-w-[2rem] text-[color:var(--color-base-secondary)] group-focus-within:text-[color:var(--color-primary)]"
           >
             <path
               fill="currentColor"
@@ -37,7 +36,7 @@ export default function Search() {
           placeholder="Ara"
           value={query}
           type="text"
-          className="w-full h-full bg-transparent placeholder-[color:var(--color-base-secondary)] rounded-full outline-none pl-[56px] text-[15px]"
+          className="w-full h-full bg-transparent placeholder-[color:var(--color-base-secondary)] rounded-full outline-none pl-[3.5rem]"
         />
         {query && focus && (
           <button

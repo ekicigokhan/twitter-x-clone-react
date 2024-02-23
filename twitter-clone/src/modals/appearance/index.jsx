@@ -78,7 +78,7 @@ export default function AppearanceModal({ close }) {
         </div>
         <div className="mx-8 mb-4">
           <section>
-            <h6 className="text-[color:var(--color-base-secondary)] mb-1 leading-5 text-[13px] font-bold">
+            <h6 className="text-[color:var(--color-base-secondary)] mb-1 leading-5 font-bold">
               Yazı tipi boyutu
             </h6>
             <div className="bg-[color:var(--background-secondary)] p-4 rounded-2xl flex items-center gap-5 ">
@@ -120,7 +120,7 @@ export default function AppearanceModal({ close }) {
             </div>
           </section>
           <section>
-            <h6 className="text-[color:var(--color-base-secondary)] mb-1 leading-5 text-[13px] font-bold">
+            <h6 className="text-[color:var(--color-base-secondary)] mb-1 leading-5 font-bold">
               Renk
             </h6>
             <div className="bg-[color:var(--background-secondary)] py-2 mb-3 rounded-2xl flex justify-around items-center">
@@ -149,7 +149,7 @@ export default function AppearanceModal({ close }) {
             </div>
           </section>
           <section>
-            <h6 className="text-[color:var(--color-base-secondary)] mb-1 leading-5 text-[13px] font-bold">
+            <h6 className="text-[color:var(--color-base-secondary)] mb-1 leading-5 font-bold">
               Arka plan
             </h6>
             <div className="py-2 px-4 mb-3 gap-2 grid grid-cols-3 bg-[color:var(--background-secondary)] rounded-2xl">
