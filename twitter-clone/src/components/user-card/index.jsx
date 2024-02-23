@@ -17,7 +17,7 @@ export default function UserCard({ user }) {
             {user.verified && (
               <svg
                 viewBox="0 0 22 22"
-                className="text-[#1d9bf0] ml-0.5"
+                className="text-[color:var(--color-primary)] ml-0.5"
                 width={18.75}
                 height={18.75}
               >
