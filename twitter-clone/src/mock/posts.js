@@ -71,16 +71,16 @@ export const posts = [
   {
     id: "1708632465282150796",
     type: "photo",
-    content: `Büyük adamsın vesselam...`,
+    content: `Going places.`,
     photos: [
-      "https://pbs.twimg.com/media/GGIfCumW8AAkgfF?format=jpg&name=4096x4096",
-      "https://pbs.twimg.com/media/GGIfCumW8AAkgfF?format=jpg&name=4096x4096",
+      "https://pbs.twimg.com/media/GF7awovWcAAL-kL?format=jpg&name=small",
+      "https://pbs.twimg.com/media/GF7awoxWwAAbxT7?format=jpg&name=360x360",
     ],
     account: {
       avatar:
-        "https://pbs.twimg.com/profile_images/1683325380441128960/yRsRRjGO_400x400.jpg",
-      username: "elonmusk",
-      fullName: "Elon Musk",
+        "https://pbs.twimg.com/profile_images/1337607516008501250/6Ggc4S5n_normal.png",
+      username: "tesla",
+      fullName: "Tesla",
       verified: true,
     },
     stats: {
@@ -93,11 +93,11 @@ export const posts = [
   {
     id: "1708632465282150796",
     type: "photo",
-    content: `Adamlar yapıyo bea... @tusasTR`,
+    content: `Falcon 9 launches 24 @Starlink satellites from Florida`,
     photos: [
-      "https://pbs.twimg.com/media/GG2-mVhXEAA4tQH?format=jpg&name=4096x4096",
-      "https://pbs.twimg.com/media/GG2-mVhXEAA4tQH?format=jpg&name=4096x4096",
-      "https://pbs.twimg.com/media/GG2-mVhXEAA4tQH?format=jpg&name=4096x4096",
+      "https://pbs.twimg.com/media/GHOEY7KbkAA6_d9?format=jpg&name=360x360",
+      "https://pbs.twimg.com/media/GHOEY6yasAAsID6?format=jpg&name=small",
+      "https://pbs.twimg.com/media/GHOEY6wbEAAESay?format=jpg&name=small",
     ],
     account: {
       avatar:
@@ -115,14 +115,12 @@ export const posts = [
   },
   {
     id: "1708704613141270652",
-    content: `Almanya verir veya vermez.
-Dünyada savaş uçakları üreten tek ülke Almanya mı ?
-`,
+    content: `Best league in the world...`,
     account: {
       avatar:
-        "https://pbs.twimg.com/profile_images/1653157500986744832/wu0ArmY8_400x400.jpg",
-      username: "receptayyiperdogan",
-      fullName: "Recep Tayyip Erdoğan",
+        "https://pbs.twimg.com/profile_images/1754457706612637696/aL7yBOCE_normal.jpg",
+      username: "turkishairlineseuroleague",
+      fullName: "Euroleague",
       verified: true,
     },
     stats: {
@@ -136,7 +134,7 @@ Dünyada savaş uçakları üreten tek ülke Almanya mı ?
   {
     id: "1708707876628476134",
     type: "photo",
-    content: `O KUPAYI ALACAĞIZ !`,
+    content: `The King Lions...`,
     photos: [
       "https://pbs.twimg.com/media/GG8JJNSX0AAnLha?format=jpg&name=medium",
       "https://pbs.twimg.com/media/GG8JJNSX0AAnLha?format=jpg&name=medium",
